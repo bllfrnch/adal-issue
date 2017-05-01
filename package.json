@@ -1,0 +1,24 @@
+{
+  "name": "adal-issue",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "adal-angular": "^1.0.14"
+  },
+  "devDependencies": {
+    "adal-angular": "^1.0.14",
+    "http-server": "^0.9.0",
+    "lodash": "^4.17.4",
+    "q": "^1.5.0",
+    "webpack": "^2.4.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack js/index.js build/index.js",
+    "watch": "webpack --watch js/index.js build/index.js --devtool eval-source-map",
+    "start": "http-server . --ssl --cert ~/.localhost-ssl/cert.pem --key ~/.localhost-ssl/key.pem -p 5000"
+  },
+  "author": "",
+  "license": "ISC"
+}

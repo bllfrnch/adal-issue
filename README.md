@@ -2,7 +2,7 @@ adal-issue
 ==========
 
 ## Purpose
-This repo serves to illustrate an ADAL issue documented [here](https://github.com/AzureAD/azure-activedirectory-library-for-js/issues/543).
+This repo serves to illustrate an ADAL issue documented [here](https://github.com/AzureAD/azure-activedirectory-library-for-js/issues/543). This has also been written up on StackOverflow [here](http://stackoverflow.com/questions/43552389/adal-js-doesnt-refresh-token-properly).
 
 ## Preflight
 1. Clone the repository. `git clone https://github.com/bllfrnch/adal-issue.git`

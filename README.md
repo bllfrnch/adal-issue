@@ -21,24 +21,27 @@ Once you've started the development web server, visit http://YOURHOST:5000/ – 
 
 Once your user has authenticated against AD, your browser will be redirected to whatever is set in the `AUTH_CONFIG` variable, and your user will be considered logged in. At this point, the application uses `window.setInterval` to call `adal.acquireToken()` every minute. Verbose logging has been enabled for adal.js, and the output is as follows. You can see that after 50 minutes, the application is no longer able to acquire a token. I've liberally removed anything that looks at all unique or sensitive, so please let me know if there's anything else you need to help identify what might be going on.
 
-    Mon, 01 May 2017 21:33:05 GMT:1.0.14-VERBOSE: Expected state: <REDACTED> startPage:<REDACTED>
-    2017-05-01 17:33:05.811 adal.js?dc1e:1468 Mon, 01 May 2017 21:33:05 GMT:1.0.14-INFO: Navigate url:https://login.microsoftonline.com/<REDACTED>
-    2017-05-01 17:33:05.811 adal.js?dc1e:1468 Mon, 01 May 2017 21:33:05 GMT:1.0.14-INFO: Navigate to:https://login.microsoftonline.com/<REDACTED>
-    2017-05-01 17:33:06.056 Navigated to https://login.microsoftonline.com/<REDACTED>
-    2017-05-01 17:33:08.076 jquery.1.11.min.js:4 XHR finished loading: GET "https://login.microsoftonline.com/common/userrealm?user=<REDACTED>...
-    2017-05-01 17:33:12.735 Navigated to <REDACTED>
-    2017-05-01 17:33:13.222 :sourcemap:1468 Mon, 01 May 2017 21:33:13 GMT:1.0.14-VERBOSE: State: <REDACTED>
-    2017-05-01 17:33:13.253 :sourcemap:1468 Mon, 01 May 2017 21:33:13 GMT:1.0.14-INFO: Returned from redirect url
-    2017-05-01 17:33:13.254 :sourcemap:1468 Mon, 01 May 2017 21:33:13 GMT:1.0.14-INFO: State status:true; Request type:LOGIN
-    2017-05-01 17:33:13.255 :sourcemap:1468 Mon, 01 May 2017 21:33:13 GMT:1.0.14-INFO: State is right
-    2017-05-01 17:33:13.255 :sourcemap:1468 Mon, 01 May 2017 21:33:13 GMT:1.0.14-INFO: Fragment has id token
-    2017-05-01 17:33:13.258 :sourcemap:1468 Mon, 01 May 2017 21:33:13 GMT:1.0.14-INFO: Token is already in cache for resource:<REDACTED>
-    2017-05-01 17:33:13.274 index.js?7c0c:45 token acquired for user, forwarding to internal page that requires auth...
-    2017-05-01 17:33:13.636 Navigated to <REDACTED>
-    2017-05-01 17:33:13.914 VM8000:1468 Mon, 01 May 2017 21:33:13 GMT:1.0.14-INFO: Token is already in cache for resource:<REDACTED>
-    2017-05-01 17:33:13.969 index.js?7c0c:45 token acquired for user, forwarding to internal page that requires auth...
-    2017-05-01 17:34:13.957 VM8000:1468 Mon, 01 May 2017 21:34:13 GMT:1.0.14-INFO: Token is already in cache for resource:<REDACTED>
-    2017-05-01 17:34:13.958 index.js?7c0c:62 Token acquired!
+    Mon, 01 May 2017 22:00:57 GMT:1.0.14-VERBOSE: Expected state: 0217fd90-642d-4cd0-83a2-1dc717da244b startPage:<REDACTED>
+    2017-05-01 18:00:57.854 web.otis.com:5000/build/index.js:1757 Mon, 01 May 2017 22:00:57 GMT:1.0.14-INFO: Navigate url:https://login.microsoftonline.com/<REDACTED>
+    2017-05-01 18:00:57.855 <REDACTED>:1757 Mon, 01 May 2017 22:00:57 GMT:1.0.14-INFO: Navigate to:https://login.microsoftonline.com/<REDACTED>
+    2017-05-01 18:00:59.131 Navigated to https://login.microsoftonline.com/<REDACTED>
+    2017-05-01 18:01:04.921 Navigated to <REDACTED>
+    2017-05-01 18:01:05.490 adal.js:1468 Mon, 01 May 2017 22:01:05 GMT:1.0.14-VERBOSE: State: <REDACTED>
+    2017-05-01 18:01:05.495 adal.js:1468 Mon, 01 May 2017 22:01:05 GMT:1.0.14-INFO: Returned from redirect url
+    2017-05-01 18:01:05.497 adal.js:1468 Mon, 01 May 2017 22:01:05 GMT:1.0.14-INFO: State status:true; Request type:LOGIN
+    2017-05-01 18:01:05.498 adal.js:1468 Mon, 01 May 2017 22:01:05 GMT:1.0.14-INFO: State is right
+    2017-05-01 18:01:05.499 adal.js:1468 Mon, 01 May 2017 22:01:05 GMT:1.0.14-INFO: Fragment has id token
+    2017-05-01 18:01:05.522 adal.js:1468 Mon, 01 May 2017 22:01:05 GMT:1.0.14-INFO: Token is already in cache for resource:<REDACTED>
+    2017-05-01 18:01:05.576 index.js:45 token acquired for user, forwarding to internal page that requires auth...
+    2017-05-01 18:01:05.936 Navigated to <REDACTED>
+    2017-05-01 18:01:06.413 adal.js:1468 Mon, 01 May 2017 22:01:06 GMT:1.0.14-INFO: Token is already in cache for resource:<REDACTED>
+    2017-05-01 18:01:06.490 index.js:45 token acquired for user, forwarding to internal page that requires auth...
+    2017-05-01 18:02:06.420 adal.js:1468 Mon, 01 May 2017 22:02:06 GMT:1.0.14-INFO: Token is already in cache for resource:<REDACTED>
+    2017-05-01 18:02:06.422 index.js:62 Token acquired!
+    2017-05-01 18:03:06.423 adal.js:1468 Mon, 01 May 2017 22:03:06 GMT:1.0.14-INFO: Token is already in cache for resource:<REDACTED>
+    2017-05-01 18:03:06.426 index.js:62 Token acquired!
+    2017-05-01 18:04:06.428 adal.js:1468 Mon, 01 May 2017 22:04:06 GMT:1.0.14-INFO: Token is already in cache for resource:<REDACTED>
+    2017-05-01 18:04:06.430 index.js:62 Token acquired!
 
     This goes on for awhile until ...
 

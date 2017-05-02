@@ -21,7 +21,7 @@ Once you've started the development web server, visit http://YOURHOST:5000/ – 
 
 Once your user has authenticated against AD, your browser will be redirected to whatever is set in the `AUTH_CONFIG` variable, and your user will be considered logged in. At this point, the application uses `window.setInterval` to call `adal.acquireToken()` every minute. Verbose logging has been enabled for adal.js, and the output is as follows. You can see that after 50 minutes, the application is no longer able to acquire a token. I've liberally removed anything that looks at all unique or sensitive, so please let me know if there's anything else you need to help identify what might be going on.
 
-    Mon, 01 May 2017 21:33:05 GMT:1.0.14-VERBOSE: Expected state: <REDACTED> startPage:https://web.otis.com:5000/login.html
+    Mon, 01 May 2017 21:33:05 GMT:1.0.14-VERBOSE: Expected state: <REDACTED> startPage:<REDACTED>
     2017-05-01 17:33:05.811 adal.js?dc1e:1468 Mon, 01 May 2017 21:33:05 GMT:1.0.14-INFO: Navigate url:https://login.microsoftonline.com/<REDACTED>
     2017-05-01 17:33:05.811 adal.js?dc1e:1468 Mon, 01 May 2017 21:33:05 GMT:1.0.14-INFO: Navigate to:https://login.microsoftonline.com/<REDACTED>
     2017-05-01 17:33:06.056 Navigated to https://login.microsoftonline.com/<REDACTED>
